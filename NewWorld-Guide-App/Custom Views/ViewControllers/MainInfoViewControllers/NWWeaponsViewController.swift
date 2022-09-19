@@ -48,5 +48,4 @@ class NWWeaponsViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func clickView() {
         print("You clicked on view")
     }
-    
 }

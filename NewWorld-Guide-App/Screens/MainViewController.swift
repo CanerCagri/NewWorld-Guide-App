@@ -6,21 +6,35 @@
 //
 
 import UIKit
+import SafariServices
 
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     let dungeons = UIView()
     let characters = UIView()
     var containers: [UIView] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "New World Guide"
         view.backgroundColor = .systemBackground
         layoutUI()
+        topRightButton()
         configureUI()
+    }
+    
+    func topRightButton() {
+        let image =  UIImage(systemName: "questionmark.bubble.fill")
+        let button = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(rightButtonTapped))
+        navigationItem.rightBarButtonItem = button
+    }
+        
+    @objc func rightButtonTapped() {
+        let url = URL(string: "https://www.newworld.com/en-us/")
+        let safariVC = SFSafariViewController(url: url!)
+        safariVC.preferredControlTintColor = .systemGreen
+        present(safariVC, animated: true)
     }
     
     func layoutUI() {

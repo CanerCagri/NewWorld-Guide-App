@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8028C9CF3000EA2A1D /* AppDelegate.swift */; };
 		01916D8328C9CF3000EA2A1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8228C9CF3000EA2A1D /* SceneDelegate.swift */; };
-		01916D8528C9CF3000EA2A1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8428C9CF3000EA2A1D /* ViewController.swift */; };
+		01916D8528C9CF3000EA2A1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8428C9CF3000EA2A1D /* MainViewController.swift */; };
 		01916D8A28C9CF3200EA2A1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01916D8928C9CF3200EA2A1D /* Assets.xcassets */; };
 		01916D8D28C9CF3200EA2A1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01916D8B28C9CF3200EA2A1D /* LaunchScreen.storyboard */; };
 		01916D9F28C9D91900EA2A1D /* NWDungeonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D9E28C9D91900EA2A1D /* NWDungeonsViewController.swift */; };
@@ -22,7 +22,7 @@
 		01916D7D28C9CF3000EA2A1D /* NewWorld-Guide-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewWorld-Guide-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01916D8028C9CF3000EA2A1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01916D8228C9CF3000EA2A1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01916D8428C9CF3000EA2A1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01916D8428C9CF3000EA2A1D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		01916D8928C9CF3200EA2A1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01916D8C28C9CF3200EA2A1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01916D8E28C9CF3200EA2A1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,12 +62,11 @@
 		01916D7F28C9CF3000EA2A1D /* NewWorld-Guide-App */ = {
 			isa = PBXGroup;
 			children = (
+				01DE74A228D91277002CFEFE /* Screens */,
 				01916D9828C9D50200EA2A1D /* Custom Views */,
-				01916D8428C9CF3000EA2A1D /* ViewController.swift */,
-				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
 				01916D9428C9D13400EA2A1D /* Supporting Files */,
+				01DE74A128D9125B002CFEFE /* Models */,
 				01916D8E28C9CF3200EA2A1D /* Info.plist */,
-				01916DA328C9E55B00EA2A1D /* Model.swift */,
 			);
 			path = "NewWorld-Guide-App";
 			sourceTree = "<group>";
@@ -87,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				01916D9C28C9D8F700EA2A1D /* ViewControllers */,
-				01916DA228C9E45600EA2A1D /* DungeonViewControllers */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -95,17 +93,35 @@
 		01916D9C28C9D8F700EA2A1D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				01916D9E28C9D91900EA2A1D /* NWDungeonsViewController.swift */,
-				01DE749E28D86D24002CFEFE /* NWWeaponsViewController.swift */,
+				01DE74A028D90E32002CFEFE /* MainInfoViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		01916DA228C9E45600EA2A1D /* DungeonViewControllers */ = {
+		01DE74A028D90E32002CFEFE /* MainInfoViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				01916D9E28C9D91900EA2A1D /* NWDungeonsViewController.swift */,
+				01DE749E28D86D24002CFEFE /* NWWeaponsViewController.swift */,
 			);
-			path = DungeonViewControllers;
+			path = MainInfoViewControllers;
+			sourceTree = "<group>";
+		};
+		01DE74A128D9125B002CFEFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01916DA328C9E55B00EA2A1D /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01DE74A228D91277002CFEFE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
+				01916D8428C9CF3000EA2A1D /* MainViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01916D8528C9CF3000EA2A1D /* ViewController.swift in Sources */,
+				01916D8528C9CF3000EA2A1D /* MainViewController.swift in Sources */,
 				01916D9F28C9D91900EA2A1D /* NWDungeonsViewController.swift in Sources */,
 				01DE749F28D86D24002CFEFE /* NWWeaponsViewController.swift in Sources */,
 				01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */,

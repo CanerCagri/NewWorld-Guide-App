@@ -48,5 +48,4 @@ class NWDungeonsViewController: UIViewController, UIGestureRecognizerDelegate {
     @objc func clickView() {
         print("You clicked on view")
     }
-    
 }
