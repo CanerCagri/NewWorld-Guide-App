@@ -22,6 +22,7 @@
 		01DE74AB28D9D506002CFEFE /* NWGemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74AA28D9D506002CFEFE /* NWGemsViewController.swift */; };
 		01DE74AD28D9D52C002CFEFE /* PerksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */; };
 		01DE74AF28D9D534002CFEFE /* GemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74AE28D9D534002CFEFE /* GemsViewController.swift */; };
+		01DE74B528D9F270002CFEFE /* WeaponsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74B428D9F270002CFEFE /* WeaponsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		01DE74AA28D9D506002CFEFE /* NWGemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWGemsViewController.swift; sourceTree = "<group>"; };
 		01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerksViewController.swift; sourceTree = "<group>"; };
 		01DE74AE28D9D534002CFEFE /* GemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsViewController.swift; sourceTree = "<group>"; };
+		01DE74B428D9F270002CFEFE /* WeaponsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		01916D9828C9D50200EA2A1D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				01DE74B328D9F24D002CFEFE /* Cells */,
 				01916D9C28C9D8F700EA2A1D /* ViewControllers */,
 			);
 			path = "Custom Views";
@@ -148,6 +151,14 @@
 				01DE74A628D91651002CFEFE /* UIHelper.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		01DE74B328D9F24D002CFEFE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				01DE74B428D9F270002CFEFE /* WeaponsCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				01916DA428C9E55B00EA2A1D /* Model.swift in Sources */,
 				01DE74AF28D9D534002CFEFE /* GemsViewController.swift in Sources */,
 				01DE74AD28D9D52C002CFEFE /* PerksViewController.swift in Sources */,
+				01DE74B528D9F270002CFEFE /* WeaponsCollectionViewCell.swift in Sources */,
 				01916D8328C9CF3000EA2A1D /* SceneDelegate.swift in Sources */,
 				01916DA128C9E31E00EA2A1D /* DungeonsViewController.swift in Sources */,
 				01DE74A928D9D4FE002CFEFE /* NWPerksViewController.swift in Sources */,
