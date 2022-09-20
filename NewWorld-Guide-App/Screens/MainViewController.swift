@@ -11,17 +11,47 @@ import SafariServices
 
 class MainViewController: UIViewController {
     
+    lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
+    
     let dungeons = UIView()
     let characters = UIView()
+    let perks = UIView()
+    let gems = UIView()
     var containers: [UIView] = []
+    
+    lazy var scrollView: UIScrollView = {
+        let view = UIScrollView(frame: .zero)
+        view.backgroundColor = .white
+        view.contentSize = contentSize
+        view.frame = self.view.bounds
+        view.autoresizingMask = .flexibleHeight
+        view.bounces = true
+        view.showsHorizontalScrollIndicator = true
+        return view
+    }()
+    
+    lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.frame.size = contentSize
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "New World Guide"
-        view.backgroundColor = .systemBackground
+        configureViewController()
+        
         layoutUI()
         topRightButton()
         configureUI()
+    }
+    
+    func configureViewController() {
+        title = "New World Guide"
+        view.backgroundColor = .systemBackground
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerView)
     }
     
     func topRightButton() {
@@ -38,28 +68,40 @@ class MainViewController: UIViewController {
     }
     
     func layoutUI() {
-        containers = [characters, dungeons]
+        containers = [characters, dungeons, perks, gems]
         for containerViews in containers {
-            view.addSubview(containerViews)
+            containerView.addSubview(containerViews)
             containerViews.translatesAutoresizingMaskIntoConstraints = false
         }
         
         NSLayoutConstraint.activate([
-            characters.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            characters.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            characters.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            characters.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20),
+            characters.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            characters.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
             characters.heightAnchor.constraint(equalToConstant: 180),
             
             dungeons.topAnchor.constraint(equalTo: characters.bottomAnchor, constant: 20),
-            dungeons.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            dungeons.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            dungeons.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            dungeons.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
             dungeons.heightAnchor.constraint(equalToConstant: 180),
+            
+            perks.topAnchor.constraint(equalTo: dungeons.bottomAnchor, constant: 20),
+            perks.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            perks.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            perks.heightAnchor.constraint(equalToConstant: 180),
+            
+            gems.topAnchor.constraint(equalTo: perks.bottomAnchor, constant: 20),
+            gems.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
+            gems.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20),
+            gems.heightAnchor.constraint(equalToConstant: 180),
         ])
     }
     
     func configureUI() {
         self.add(childVC: NWDungeonsViewController(), containerView: self.dungeons)
         self.add(childVC: NWWeaponsViewController(), containerView: self.characters)
+        self.add(childVC: NWPerksViewController(), containerView: self.perks)
+        self.add(childVC: NWGemsViewController(), containerView: self.gems)
     }
     
     func add(childVC: UIViewController, containerView: UIView) {

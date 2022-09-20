@@ -1,14 +1,14 @@
 //
-//  NWCharacters.swift
+//  NWGemsViewController.swift
 //  NewWorld-Guide-App
 //
-//  Created by Caner Çağrı on 19.09.2022.
+//  Created by Caner Çağrı on 20.09.2022.
 //
 
 import UIKit
 
 
-class NWWeaponsViewController: UIViewController, UIGestureRecognizerDelegate {
+class NWGemsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     let imageView = UIImageView()
     var imageName: String!
@@ -33,7 +33,7 @@ class NWWeaponsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func configureImageView() {
-        imageView.image = UIImage(named: "weapons")
+        imageView.image = UIImage(named: "gems")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
         imageView.tintColor = .secondaryLabel
@@ -46,7 +46,8 @@ class NWWeaponsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func clickView() {
-        let weaponsVc = WeaponsViewController()
+        let weaponsVc = GemsViewController()
         navigationController?.pushViewController(weaponsVc, animated: true)
     }
 }
+

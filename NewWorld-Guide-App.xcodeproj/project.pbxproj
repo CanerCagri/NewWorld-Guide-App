@@ -16,6 +16,12 @@
 		01916DA128C9E31E00EA2A1D /* DungeonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */; };
 		01916DA428C9E55B00EA2A1D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916DA328C9E55B00EA2A1D /* Model.swift */; };
 		01DE749F28D86D24002CFEFE /* NWWeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE749E28D86D24002CFEFE /* NWWeaponsViewController.swift */; };
+		01DE74A428D91410002CFEFE /* WeaponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74A328D91410002CFEFE /* WeaponsViewController.swift */; };
+		01DE74A728D91651002CFEFE /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74A628D91651002CFEFE /* UIHelper.swift */; };
+		01DE74A928D9D4FE002CFEFE /* NWPerksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74A828D9D4FE002CFEFE /* NWPerksViewController.swift */; };
+		01DE74AB28D9D506002CFEFE /* NWGemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74AA28D9D506002CFEFE /* NWGemsViewController.swift */; };
+		01DE74AD28D9D52C002CFEFE /* PerksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */; };
+		01DE74AF28D9D534002CFEFE /* GemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74AE28D9D534002CFEFE /* GemsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonsViewController.swift; sourceTree = "<group>"; };
 		01916DA328C9E55B00EA2A1D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		01DE749E28D86D24002CFEFE /* NWWeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWWeaponsViewController.swift; sourceTree = "<group>"; };
+		01DE74A328D91410002CFEFE /* WeaponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsViewController.swift; sourceTree = "<group>"; };
+		01DE74A628D91651002CFEFE /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		01DE74A828D9D4FE002CFEFE /* NWPerksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWPerksViewController.swift; sourceTree = "<group>"; };
+		01DE74AA28D9D506002CFEFE /* NWGemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWGemsViewController.swift; sourceTree = "<group>"; };
+		01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerksViewController.swift; sourceTree = "<group>"; };
+		01DE74AE28D9D534002CFEFE /* GemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 		01916D7F28C9CF3000EA2A1D /* NewWorld-Guide-App */ = {
 			isa = PBXGroup;
 			children = (
+				01DE74A528D91643002CFEFE /* Utilities */,
 				01DE74A228D91277002CFEFE /* Screens */,
 				01916D9828C9D50200EA2A1D /* Custom Views */,
 				01916D9428C9D13400EA2A1D /* Supporting Files */,
@@ -103,6 +116,8 @@
 			children = (
 				01916D9E28C9D91900EA2A1D /* NWDungeonsViewController.swift */,
 				01DE749E28D86D24002CFEFE /* NWWeaponsViewController.swift */,
+				01DE74A828D9D4FE002CFEFE /* NWPerksViewController.swift */,
+				01DE74AA28D9D506002CFEFE /* NWGemsViewController.swift */,
 			);
 			path = MainInfoViewControllers;
 			sourceTree = "<group>";
@@ -118,10 +133,21 @@
 		01DE74A228D91277002CFEFE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
 				01916D8428C9CF3000EA2A1D /* MainViewController.swift */,
+				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
+				01DE74A328D91410002CFEFE /* WeaponsViewController.swift */,
+				01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */,
+				01DE74AE28D9D534002CFEFE /* GemsViewController.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		01DE74A528D91643002CFEFE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				01DE74A628D91651002CFEFE /* UIHelper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,12 +221,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				01916D8528C9CF3000EA2A1D /* MainViewController.swift in Sources */,
+				01DE74AB28D9D506002CFEFE /* NWGemsViewController.swift in Sources */,
 				01916D9F28C9D91900EA2A1D /* NWDungeonsViewController.swift in Sources */,
+				01DE74A428D91410002CFEFE /* WeaponsViewController.swift in Sources */,
 				01DE749F28D86D24002CFEFE /* NWWeaponsViewController.swift in Sources */,
 				01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */,
+				01DE74A728D91651002CFEFE /* UIHelper.swift in Sources */,
 				01916DA428C9E55B00EA2A1D /* Model.swift in Sources */,
+				01DE74AF28D9D534002CFEFE /* GemsViewController.swift in Sources */,
+				01DE74AD28D9D52C002CFEFE /* PerksViewController.swift in Sources */,
 				01916D8328C9CF3000EA2A1D /* SceneDelegate.swift in Sources */,
 				01916DA128C9E31E00EA2A1D /* DungeonsViewController.swift in Sources */,
+				01DE74A928D9D4FE002CFEFE /* NWPerksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
