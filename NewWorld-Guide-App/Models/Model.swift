@@ -9,7 +9,9 @@ import Foundation
 
 struct DungeonModel {
     var name: String
+    var location: String
     var levelRequirement: Int
+    var type: String
     var weakneses: [String]
     var resistanses: [String]
 }
@@ -23,8 +25,14 @@ struct WeaponModel: Codable, Hashable {
 
 struct DungeonMockData {
     static var mockData: [DungeonModel] = [
-        DungeonModel(name: "Lazarus", levelRequirement: 60, weakneses: ["Lightning Damage %50", "Strike Damage %20", "Void Damage %15"], resistanses: ["Fire Damage %40", "Slash Damage %15"]),
-        DungeonModel(name: "test", levelRequirement: 12, weakneses: ["test1", "test2"], resistanses: ["test3", "test4"])
+        DungeonModel(name: "Amrine Excavation", location: "Windwsward", levelRequirement: 25, type: "The Lost", weakneses: ["Strike", "Ice", "Nature"], resistanses: ["Thrust", "Void"]),
+        DungeonModel(name: "Starstone Barrows", location: "Everfall", levelRequirement: 35, type: "Ancient Guardian", weakneses: ["Lightning", "Strike", "Void"], resistanses: ["Fire", "Slash"]),
+        DungeonModel(name: "The Depths", location: "Restless Shore", levelRequirement: 45, type: "The Corrupted", weakneses: ["Thrust", "Nature", "Arcane"], resistanses: ["Strike", "Ice"]),
+        DungeonModel(name: "Dynasty Shipyard", location: "Ebonscale Reach", levelRequirement: 55, type: "The Corrupted", weakneses: ["Thrust", "Nature", "Arcane"], resistanses: ["Strike", "Ice"]),
+        DungeonModel(name: "Garden Of Genesis", location: "Edengrove", levelRequirement: 60, type: "The Angry Earth", weakneses: ["Slash", "Fire"], resistanses: ["Thrust", "Lightning"]),
+        DungeonModel(name: "Lazarus Instrumentality", location: "Reekwater", levelRequirement: 60, type: "Ancient Guardian", weakneses: ["Lightning", "Strike", "Void"], resistanses: ["Fire", "Slash"]),
+        DungeonModel(name: "Barnacles And Black Powder", location: "Cutlass Keys", levelRequirement: 60, type: "The Lost", weakneses: ["Strike", "Ice", "Nature"], resistanses: ["Thrust", "Void"]),
+        DungeonModel(name: "Tempest's Heart", location: "Shattered Mountain", levelRequirement: 60, type: "The Corrupted", weakneses: ["Thrust", "Nature", "Arcane"], resistanses: ["Strike", "Ice"])
     ]
 }
 

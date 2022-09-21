@@ -46,6 +46,7 @@ class NWDungeonsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func clickView() {
-        print("You clicked on view")
+        let dungeonsVc = DungeonsViewController()
+        navigationController?.pushViewController(dungeonsVc, animated: true)
     }
 }

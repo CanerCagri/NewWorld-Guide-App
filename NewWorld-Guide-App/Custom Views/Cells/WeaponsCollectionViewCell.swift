@@ -64,7 +64,6 @@ class WeaponsCollectionViewCell: UICollectionViewCell {
             weaponScales.text? += "\(weapon.scale![i])/"
         }
         weaponScales.text?.removeLast()
-        configure()
     }
     
     private func configure() {

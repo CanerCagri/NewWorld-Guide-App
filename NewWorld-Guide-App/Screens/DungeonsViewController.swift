@@ -9,32 +9,46 @@ import UIKit
 
 class DungeonsViewController: UIViewController {
     
-    let lazarus = UIView()
-    var containers: [UIView] = []
+    let tableView = UITableView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "New World Dungeons"
+        configureViewController()
+        configureTableView()
+    }
+    
+    func configureViewController() {
         view.backgroundColor = .systemBackground
-        layoutUI()
-//        configureUI()
-        
+        title = "Dungeons"
     }
     
-    func layoutUI() {
-        containers = [lazarus]
-        for containerViews in containers {
-            view.addSubview(containerViews)
-            containerViews.translatesAutoresizingMaskIntoConstraints = false
-        }
+    func configureTableView() {
+        view.addSubview(tableView)
         
-        NSLayoutConstraint.activate([
-            lazarus.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            lazarus.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            lazarus.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            lazarus.heightAnchor.constraint(equalToConstant: 180),
-        ])
+        tableView.frame = view.bounds
+        tableView.rowHeight = 88
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = false
+        
+        tableView.register(DungeonsTableViewCell.self, forCellReuseIdentifier: DungeonsTableViewCell.reuseID)
     }
-    
+}
 
+extension DungeonsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DungeonMockData.mockData.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DungeonsTableViewCell.reuseID) as! DungeonsTableViewCell
+        let dungeon = DungeonMockData.mockData[indexPath.row]
+        cell.set(dungeon: dungeon)
+        return cell
+    }
 }
