@@ -118,12 +118,12 @@ class DungeonsTableViewCell: UITableViewCell {
             dungeonLevel.leadingAnchor.constraint(equalTo: dungeonName.trailingAnchor, constant: padding),
             dungeonLevel.topAnchor.constraint(equalTo: dungeonName.topAnchor),
             dungeonLevel.heightAnchor.constraint(equalToConstant: 60),
-            dungeonLevel.widthAnchor.constraint(equalToConstant: 60),
+            dungeonLevel.widthAnchor.constraint(equalToConstant: 40),
             
             dungeonLocation.leadingAnchor.constraint(equalTo: dungeonLevel.trailingAnchor, constant: padding),
             dungeonLocation.topAnchor.constraint(equalTo: dungeonLevel.topAnchor),
             dungeonLocation.heightAnchor.constraint(equalToConstant: 60),
-            dungeonLocation.widthAnchor.constraint(equalToConstant: 60),
+            dungeonLocation.widthAnchor.constraint(equalToConstant: 80),
             
          
             weakness.topAnchor.constraint(equalTo: dungeonLocation.bottomAnchor, constant: -50),
