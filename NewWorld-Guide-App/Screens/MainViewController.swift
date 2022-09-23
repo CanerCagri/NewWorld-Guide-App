@@ -11,13 +11,14 @@ import SafariServices
 
 class MainViewController: UIViewController {
     
-    lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
-    
+    // MARK: Views
     let dungeons = UIView()
     let characters = UIView()
     let perks = UIView()
     let gems = UIView()
     var containers: [UIView] = []
+    
+    lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView(frame: .zero)
@@ -37,7 +38,7 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    
+    // MARK: Lifecycle method
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -47,6 +48,7 @@ class MainViewController: UIViewController {
         configureUI()
     }
     
+    // MARK: Functions
     func configureViewController() {
         title = "New World Guide"
         view.backgroundColor = .systemBackground

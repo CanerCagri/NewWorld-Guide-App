@@ -46,8 +46,8 @@ class NWGemsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func clickView() {
-        let weaponsVc = GemsViewController()
-        navigationController?.pushViewController(weaponsVc, animated: true)
+        let gemsVc = GemsViewController()
+        navigationController?.pushViewController(gemsVc, animated: true)
     }
 }
 

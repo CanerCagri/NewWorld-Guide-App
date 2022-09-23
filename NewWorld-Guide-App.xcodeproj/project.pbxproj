@@ -25,6 +25,7 @@
 		01DE74B528D9F270002CFEFE /* WeaponsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74B428D9F270002CFEFE /* WeaponsCollectionViewCell.swift */; };
 		01DE74B728DB22E8002CFEFE /* DungeonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74B628DB22E8002CFEFE /* DungeonsTableViewCell.swift */; };
 		01DE74B928DDCCFF002CFEFE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74B828DDCCFF002CFEFE /* Extensions.swift */; };
+		01DE74BB28DDD44E002CFEFE /* PerksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74BA28DDD44E002CFEFE /* PerksTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		01DE74B428D9F270002CFEFE /* WeaponsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsCollectionViewCell.swift; sourceTree = "<group>"; };
 		01DE74B628DB22E8002CFEFE /* DungeonsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonsTableViewCell.swift; sourceTree = "<group>"; };
 		01DE74B828DDCCFF002CFEFE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		01DE74BA28DDD44E002CFEFE /* PerksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerksTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +85,8 @@
 				01DE74A528D91643002CFEFE /* Utilities */,
 				01DE74A228D91277002CFEFE /* Screens */,
 				01916D9828C9D50200EA2A1D /* Custom Views */,
-				01916D9428C9D13400EA2A1D /* Supporting Files */,
 				01DE74A128D9125B002CFEFE /* Models */,
+				01916D9428C9D13400EA2A1D /* Supporting Files */,
 				01916D8E28C9CF3200EA2A1D /* Info.plist */,
 				01DE74B828DDCCFF002CFEFE /* Extensions.swift */,
 			);
@@ -122,8 +124,8 @@
 		01DE74A028D90E32002CFEFE /* MainInfoViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				01916D9E28C9D91900EA2A1D /* NWDungeonsViewController.swift */,
 				01DE749E28D86D24002CFEFE /* NWWeaponsViewController.swift */,
+				01916D9E28C9D91900EA2A1D /* NWDungeonsViewController.swift */,
 				01DE74A828D9D4FE002CFEFE /* NWPerksViewController.swift */,
 				01DE74AA28D9D506002CFEFE /* NWGemsViewController.swift */,
 			);
@@ -142,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				01916D8428C9CF3000EA2A1D /* MainViewController.swift */,
-				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
 				01DE74A328D91410002CFEFE /* WeaponsViewController.swift */,
+				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
 				01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */,
 				01DE74AE28D9D534002CFEFE /* GemsViewController.swift */,
 			);
@@ -163,6 +165,7 @@
 			children = (
 				01DE74B428D9F270002CFEFE /* WeaponsCollectionViewCell.swift */,
 				01DE74B628DB22E8002CFEFE /* DungeonsTableViewCell.swift */,
+				01DE74BA28DDD44E002CFEFE /* PerksTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				01DE74A428D91410002CFEFE /* WeaponsViewController.swift in Sources */,
 				01DE749F28D86D24002CFEFE /* NWWeaponsViewController.swift in Sources */,
 				01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */,
+				01DE74BB28DDD44E002CFEFE /* PerksTableViewCell.swift in Sources */,
 				01DE74A728D91651002CFEFE /* UIHelper.swift in Sources */,
 				01916DA428C9E55B00EA2A1D /* Model.swift in Sources */,
 				01DE74AF28D9D534002CFEFE /* GemsViewController.swift in Sources */,

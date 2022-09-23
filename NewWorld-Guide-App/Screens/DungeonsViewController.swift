@@ -7,11 +7,11 @@
 
 import UIKit
 
+
 class DungeonsViewController: UIViewController {
     
     let tableView = UITableView()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -30,15 +30,11 @@ class DungeonsViewController: UIViewController {
         tableView.rowHeight = 88
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.allowsSelection = false
-        
         tableView.register(DungeonsTableViewCell.self, forCellReuseIdentifier: DungeonsTableViewCell.reuseID)
     }
 }
 
 extension DungeonsViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DungeonMockData.mockData.count

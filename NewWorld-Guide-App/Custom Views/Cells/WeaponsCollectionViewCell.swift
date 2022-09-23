@@ -10,9 +10,11 @@ import UIKit
 
 class WeaponsCollectionViewCell: UICollectionViewCell {
     
+    // MARK: Properties
     static let reuseID = "WeaponsCell"
     let padding: CGFloat = 8
     
+    // MARK: Views
     let weaponImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +48,7 @@ class WeaponsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-
+    // MARK: Lifecycle methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -56,6 +58,7 @@ class WeaponsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Functions
     func set(weapon: WeaponModel) {
         weaponImageView.image = UIImage(named: weapon.image)
         weaponName.text = weapon.name

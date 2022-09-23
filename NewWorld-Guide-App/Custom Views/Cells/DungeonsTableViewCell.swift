@@ -7,11 +7,14 @@
 
 import UIKit
 
+
 class DungeonsTableViewCell: UITableViewCell {
 
+    // MARK: Properties
     static let reuseID = "DungeonsCell"
     let padding: CGFloat = 12
     
+    // MARK: Views
     let dungeonName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +101,7 @@ class DungeonsTableViewCell: UITableViewCell {
         return label
     }()
     
+    // MARK: Lifecycle methods
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         applyShadow(cornerRadius: 8)
@@ -109,6 +113,7 @@ class DungeonsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Functions
     func set(dungeon: DungeonModel) {
         dungeonName.text = dungeon.name
         dungeonLevel.text = "\(dungeon.levelRequirement)"

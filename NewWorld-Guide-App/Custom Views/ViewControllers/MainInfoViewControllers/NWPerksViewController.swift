@@ -46,7 +46,7 @@ class NWPerksViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func clickView() {
-        let weaponsVc = PerksViewController()
-        navigationController?.pushViewController(weaponsVc, animated: true)
+        let perkVc = PerksViewController()
+        navigationController?.pushViewController(perkVc, animated: true)
     }
 }
