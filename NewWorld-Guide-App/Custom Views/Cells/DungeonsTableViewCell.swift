@@ -16,10 +16,10 @@ class DungeonsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 11, weight: .heavy)
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.7
+        label.minimumScaleFactor = 0.8
         label.lineBreakMode = .byTruncatingTail
         return label
     }()
@@ -28,7 +28,7 @@ class DungeonsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
@@ -40,7 +40,7 @@ class DungeonsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.7
@@ -48,13 +48,38 @@ class DungeonsTableViewCell: UITableViewCell {
         return label
     }()
     
-    let weakness: UILabel = {
+    let weaknessLabel: UILabel = {
         let label = UILabel()
-//        label.text = "Weakness"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+        label.text = "Weaknesses"
+        label.textColor = .red
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.lineBreakMode = .byTruncatingTail
+        return label
+    }()
+    
+    let weakness: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         label.textColor = .label
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.lineBreakMode = .byTruncatingTail
+        return label
+    }()
+    
+    let strongestLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.text = "Strengths"
+        label.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+        label.textColor = .red
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.lineBreakMode = .byTruncatingTail
@@ -63,10 +88,9 @@ class DungeonsTableViewCell: UITableViewCell {
     
     let strongest: UILabel = {
         let label = UILabel()
-//        label.text = "Strongest"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
@@ -76,6 +100,8 @@ class DungeonsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        applyShadow(cornerRadius: 8)
+        self.selectionStyle = .none
         configure()
     }
     
@@ -104,10 +130,10 @@ class DungeonsTableViewCell: UITableViewCell {
         addSubview(dungeonName)
         addSubview(dungeonLevel)
         addSubview(dungeonLocation)
+        addSubview(weaknessLabel)
         addSubview(weakness)
+        addSubview(strongestLabel)
         addSubview(strongest)
-        
-//        accessoryType = .disclosureIndicator
         
         NSLayoutConstraint.activate([
             dungeonName.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -125,16 +151,29 @@ class DungeonsTableViewCell: UITableViewCell {
             dungeonLocation.heightAnchor.constraint(equalToConstant: 60),
             dungeonLocation.widthAnchor.constraint(equalToConstant: 80),
             
-         
-            weakness.topAnchor.constraint(equalTo: dungeonLocation.bottomAnchor, constant: -50),
-            weakness.leadingAnchor.constraint(equalTo: dungeonLocation.trailingAnchor, constant: 20),
-            weakness.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            weakness.widthAnchor.constraint(equalToConstant: 100),
+            weaknessLabel.topAnchor.constraint(equalTo: dungeonLocation.bottomAnchor, constant: -70),
+            weaknessLabel.leadingAnchor.constraint(equalTo: dungeonLocation.trailingAnchor, constant: 10),
+            weaknessLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            weaknessLabel.widthAnchor.constraint(equalToConstant: 100),
+            weaknessLabel.heightAnchor.constraint(equalToConstant: 30),
             
-            strongest.leadingAnchor.constraint(equalTo: dungeonLocation.trailingAnchor, constant: 20),
-            strongest.topAnchor.constraint(equalTo: weakness.bottomAnchor, constant: 10),
-            strongest.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            weakness.topAnchor.constraint(equalTo: weaknessLabel.bottomAnchor, constant: -13),
+            weakness.leadingAnchor.constraint(equalTo: weaknessLabel.leadingAnchor),
+            weakness.trailingAnchor.constraint(equalTo: weaknessLabel.trailingAnchor),
+            weakness.widthAnchor.constraint(equalToConstant: 100),
+            weakness.heightAnchor.constraint(equalToConstant: 30),
+            
+            strongestLabel.leadingAnchor.constraint(equalTo: weakness.leadingAnchor),
+            strongestLabel.topAnchor.constraint(equalTo: weakness.bottomAnchor, constant: -6),
+            strongestLabel.trailingAnchor.constraint(equalTo: weakness.trailingAnchor),
+            strongestLabel.widthAnchor.constraint(equalToConstant: 100),
+            strongestLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            strongest.topAnchor.constraint(equalTo: strongestLabel.bottomAnchor, constant: -13),
+            strongest.leadingAnchor.constraint(equalTo: strongestLabel.leadingAnchor),
+            strongest.trailingAnchor.constraint(equalTo: strongestLabel.trailingAnchor),
             strongest.widthAnchor.constraint(equalToConstant: 100),
+            strongest.heightAnchor.constraint(equalToConstant: 30),
         ])
     }
 }

@@ -30,7 +30,7 @@ class DungeonsViewController: UIViewController {
         tableView.rowHeight = 88
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsSelection = false
+//        tableView.allowsSelection = false
         
         tableView.register(DungeonsTableViewCell.self, forCellReuseIdentifier: DungeonsTableViewCell.reuseID)
     }
