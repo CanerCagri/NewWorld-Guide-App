@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct GemModel: Codable, Hashable  {
     var image: String
     var name: String

@@ -121,8 +121,6 @@ class GemsCollectionViewCell: UICollectionViewCell {
         gemName.text = gem.name
         weaponEffects.text = gem.weaponEffect
         armorsEffects.text = gem.armorEffect
-        
-        
     }
     
     private func configure() {

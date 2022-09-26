@@ -22,8 +22,10 @@ class DungeonsViewController: UIViewController {
     
     // MARK: Functions
     func configureViewController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
         title = "Dungeons"
+        
     }
     
     func configureTableView() {

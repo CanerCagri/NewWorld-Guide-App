@@ -48,6 +48,11 @@ class MainViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
     // MARK: Functions
     func configureViewController() {
         title = "New World Guide"
