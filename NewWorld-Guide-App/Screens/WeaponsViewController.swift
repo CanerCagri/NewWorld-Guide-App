@@ -30,7 +30,7 @@ class WeaponsViewController: UIViewController {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createColumnFlowLayout(view: view, columnCount: 3))
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(view: view))
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground

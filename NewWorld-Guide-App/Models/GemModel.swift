@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GemModel {
+struct GemModel: Codable, Hashable  {
     var image: String
     var name: String
     var weaponEffect: String

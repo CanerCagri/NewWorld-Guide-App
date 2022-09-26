@@ -12,7 +12,7 @@ class GemsViewController: UIViewController {
 
     // MARK: Properties
     var collectionView: UICollectionView!
-    var dataSource: UICollectionViewDiffableDataSource <Section, WeaponModel>!
+    var dataSource: UICollectionViewDiffableDataSource <Section, GemModel>!
     
     // MARK: Lifecycle Methods
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class GemsViewController: UIViewController {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createColumnFlowLayout(view: view, columnCount: 3))
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createFourColumnFlowLayout(view: view))
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground
@@ -38,17 +38,17 @@ class GemsViewController: UIViewController {
     }
     
     func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, WeaponModel>(collectionView: collectionView, cellProvider: { collectionView, indexPath, weapon in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeaponsCollectionViewCell.reuseID, for: indexPath) as! WeaponsCollectionViewCell
-            cell.set(weapon: weapon)
+        dataSource = UICollectionViewDiffableDataSource<Section, GemModel>(collectionView: collectionView, cellProvider: { collectionView, indexPath, gem in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GemsCollectionViewCell.reuseID, for: indexPath) as! GemsCollectionViewCell
+            cell.set(gem: gem)
             return cell
         })
     }
     
     func updateData() {
-        var snapShot = NSDiffableDataSourceSnapshot<Section, WeaponModel>()
+        var snapShot = NSDiffableDataSourceSnapshot<Section, GemModel>()
         snapShot.appendSections([.main])
-        snapShot.appendItems(WeaponMockData.mockdata)
+        snapShot.appendItems(GemMockData.mockdata)
         
         dataSource.apply(snapShot, animatingDifferences: true)
     }
