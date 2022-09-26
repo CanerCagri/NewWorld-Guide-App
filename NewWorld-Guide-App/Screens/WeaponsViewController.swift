@@ -10,24 +10,27 @@ import UIKit
 
 class WeaponsViewController: UIViewController {
     
-    enum Section {
-        case main
-    }
-    
+    // MARK: Properties
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource <Section, WeaponModel>!
     
+    // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Weapons"
+        configureViewController()
         configureCollectionView()
         configureDataSource()
         updateData()
     }
     
+    // MARK: Functions
+    func configureViewController() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Weapons"
+    }
+    
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(view: view))
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createColumnFlowLayout(view: view, columnCount: 3))
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground

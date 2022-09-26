@@ -10,14 +10,17 @@ import UIKit
 
 class DungeonsViewController: UIViewController {
     
+    // MARK: Properties
     let tableView = UITableView()
 
+    // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureTableView()
     }
     
+    // MARK: Functions
     func configureViewController() {
         view.backgroundColor = .systemBackground
         title = "Dungeons"
@@ -34,6 +37,7 @@ class DungeonsViewController: UIViewController {
     }
 }
 
+// MARK: Tableview Methods
 extension DungeonsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

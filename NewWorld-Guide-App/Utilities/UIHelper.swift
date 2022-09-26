@@ -9,12 +9,12 @@ import UIKit
 
 enum UIHelper {
     
-    static func createThreeColumnFlowLayout(view: UIView) -> UICollectionViewFlowLayout {
+    static func createColumnFlowLayout(view: UIView, columnCount: CGFloat) -> UICollectionViewFlowLayout {
         let width = view.bounds.width
         let padding: CGFloat = 12
         let minimumItemSpace: CGFloat = 10
-        let availableWidth = width - (padding * 2) - (minimumItemSpace * 2)
-        let itemWidth = availableWidth / 3
+        let availableWidth = width - (padding * columnCount - 1) - (minimumItemSpace * columnCount - 1)
+        let itemWidth = availableWidth / columnCount
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
@@ -22,4 +22,8 @@ enum UIHelper {
      
         return flowLayout
     }
+}
+
+enum Section {
+    case main
 }

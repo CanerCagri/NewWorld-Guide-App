@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    // MARK: Lifecycle method
+    // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -53,7 +53,9 @@ class MainViewController: UIViewController {
         title = "New World Guide"
         view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
+        scrollView.backgroundColor = .systemBackground
         scrollView.addSubview(containerView)
+        containerView.backgroundColor = .systemBackground
     }
     
     func topRightButton() {

@@ -32,6 +32,7 @@ class PerksTableViewCell: UITableViewCell {
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
+        label.backgroundColor = .systemGray3
         label.lineBreakMode = .byTruncatingTail
         return label
     }()
@@ -61,7 +62,7 @@ class PerksTableViewCell: UITableViewCell {
         return label
     }()
     
-    // MARK: Lifecycle methods
+    // MARK: Lifecycle Methods
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
@@ -106,8 +107,7 @@ class PerksTableViewCell: UITableViewCell {
             tierLabel.topAnchor.constraint(equalTo: perkName.topAnchor),
             tierLabel.leadingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor, constant: padding),
             tierLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            tierLabel.heightAnchor.constraint(equalToConstant: 50),
-
+            tierLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

@@ -85,7 +85,7 @@ class WeaponsCollectionViewCell: UICollectionViewCell {
             weaponName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             weaponName.heightAnchor.constraint(equalToConstant: 20),
             
-            weaponScales.topAnchor.constraint(equalTo: weaponName.bottomAnchor, constant: 5),
+            weaponScales.topAnchor.constraint(equalTo: weaponName.bottomAnchor, constant: -4),
             weaponScales.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             weaponScales.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             weaponScales.heightAnchor.constraint(equalToConstant: 20),

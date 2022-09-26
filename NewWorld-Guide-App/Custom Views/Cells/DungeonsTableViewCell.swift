@@ -21,6 +21,7 @@ class DungeonsTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 11, weight: .heavy)
         label.textColor = .label
+        label.backgroundColor = .systemGray3
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8
         label.lineBreakMode = .byTruncatingTail
