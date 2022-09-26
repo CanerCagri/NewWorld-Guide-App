@@ -26,7 +26,7 @@ class WeaponsViewController: UIViewController {
     // MARK: Functions
     func configureViewController() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Weapons"
+        navigationItem.title = titles.weapons
     }
     
     func configureCollectionView() {
@@ -34,12 +34,12 @@ class WeaponsViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(WeaponsCollectionViewCell.self, forCellWithReuseIdentifier: WeaponsCollectionViewCell.reuseID)
+        collectionView.register(WeaponsCollectionViewCell.self, forCellWithReuseIdentifier: reuseID.weaponCollectionViewCell)
     }
     
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, WeaponModel>(collectionView: collectionView, cellProvider: { collectionView, indexPath, weapon in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeaponsCollectionViewCell.reuseID, for: indexPath) as! WeaponsCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID.weaponCollectionViewCell, for: indexPath) as! WeaponsCollectionViewCell
             cell.set(weapon: weapon)
             return cell
         })

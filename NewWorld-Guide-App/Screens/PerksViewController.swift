@@ -26,7 +26,7 @@ class PerksViewController: UIViewController {
     // MARK: Functioins
     func configureViewController() {
         view.backgroundColor = .systemBackground
-        title = "Perks"
+        title = titles.perks
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -37,12 +37,12 @@ class PerksViewController: UIViewController {
         tableView.rowHeight = 70
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(PerksTableViewCell.self, forCellReuseIdentifier: PerksTableViewCell.reuseID)
+        tableView.register(PerksTableViewCell.self, forCellReuseIdentifier: reuseID.perksTableViewCell)
     }
     
     func configureSearchController() {
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search for a perkname"
+        searchController.searchBar.placeholder = perkSearchBar.placeholder
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         definesPresentationContext = true
@@ -59,7 +59,7 @@ extension PerksViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PerksTableViewCell.reuseID) as! PerksTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID.perksTableViewCell) as! PerksTableViewCell
         cell.set(perk: perks[indexPath.row])
         return cell
     }

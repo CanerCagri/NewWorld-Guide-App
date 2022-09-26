@@ -11,7 +11,6 @@ import UIKit
 class DungeonsTableViewCell: UITableViewCell {
 
     // MARK: Properties
-    static let reuseID = "DungeonsCell"
     let padding: CGFloat = 12
     
     // MARK: Views

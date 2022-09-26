@@ -11,7 +11,6 @@ import UIKit
 class WeaponsCollectionViewCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID = "WeaponsCell"
     let padding: CGFloat = 8
     
     // MARK: Views

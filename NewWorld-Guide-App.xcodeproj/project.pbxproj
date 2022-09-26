@@ -30,6 +30,7 @@
 		01DE74BF28E1CF77002CFEFE /* WeaponModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74BE28E1CF77002CFEFE /* WeaponModel.swift */; };
 		01DE74C128E1CF80002CFEFE /* PerkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C028E1CF80002CFEFE /* PerkModel.swift */; };
 		01DE74C328E1CF88002CFEFE /* GemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C228E1CF88002CFEFE /* GemModel.swift */; };
+		01DE74C828E1E17A002CFEFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C728E1E17A002CFEFE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		01DE74BE28E1CF77002CFEFE /* WeaponModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponModel.swift; sourceTree = "<group>"; };
 		01DE74C028E1CF80002CFEFE /* PerkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerkModel.swift; sourceTree = "<group>"; };
 		01DE74C228E1CF88002CFEFE /* GemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemModel.swift; sourceTree = "<group>"; };
+		01DE74C728E1E17A002CFEFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				01DE74A628D91651002CFEFE /* UIHelper.swift */,
+				01DE74C728E1E17A002CFEFE /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01916D8528C9CF3000EA2A1D /* MainViewController.swift in Sources */,
+				01DE74C828E1E17A002CFEFE /* Constants.swift in Sources */,
 				01DE74B728DB22E8002CFEFE /* DungeonsTableViewCell.swift in Sources */,
 				01DE74AB28D9D506002CFEFE /* NWGemsViewController.swift in Sources */,
 				01916D9F28C9D91900EA2A1D /* NWDungeonsViewController.swift in Sources */,

@@ -26,7 +26,7 @@ class GemsViewController: UIViewController {
     // MARK: Functions
     func configureViewController() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Gems"
+        navigationItem.title = titles.gems
     }
     
     func configureCollectionView() {
@@ -34,12 +34,12 @@ class GemsViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(GemsCollectionViewCell.self, forCellWithReuseIdentifier: GemsCollectionViewCell.reuseID)
+        collectionView.register(GemsCollectionViewCell.self, forCellWithReuseIdentifier: reuseID.gemsCollectionViewCell)
     }
     
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, GemModel>(collectionView: collectionView, cellProvider: { collectionView, indexPath, gem in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GemsCollectionViewCell.reuseID, for: indexPath) as! GemsCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID.gemsCollectionViewCell, for: indexPath) as! GemsCollectionViewCell
             cell.set(gem: gem)
             return cell
         })

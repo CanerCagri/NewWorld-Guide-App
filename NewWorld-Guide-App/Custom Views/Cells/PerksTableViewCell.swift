@@ -11,7 +11,6 @@ import UIKit
 class PerksTableViewCell: UITableViewCell {
 
     // MARK: Properties
-    static let reuseID = "PerksCell"
     let padding: CGFloat = 10
     
     // MARK: Views

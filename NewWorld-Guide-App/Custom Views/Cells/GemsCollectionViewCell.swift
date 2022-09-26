@@ -10,7 +10,6 @@ import UIKit
 class GemsCollectionViewCell: UICollectionViewCell {
     
     // MARK: Properties
-    static let reuseID = "GemsCell"
     let padding: CGFloat = -10
     
     // MARK: Views

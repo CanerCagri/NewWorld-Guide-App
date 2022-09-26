@@ -24,7 +24,7 @@ class DungeonsViewController: UIViewController {
     func configureViewController() {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemBackground
-        title = "Dungeons"
+        title = titles.dungeons
         
     }
     
@@ -35,7 +35,7 @@ class DungeonsViewController: UIViewController {
         tableView.rowHeight = 88
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(DungeonsTableViewCell.self, forCellReuseIdentifier: DungeonsTableViewCell.reuseID)
+        tableView.register(DungeonsTableViewCell.self, forCellReuseIdentifier: reuseID.dungeonsTableViewCell)
     }
 }
 
@@ -48,7 +48,7 @@ extension DungeonsViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DungeonsTableViewCell.reuseID) as! DungeonsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID.dungeonsTableViewCell) as! DungeonsTableViewCell
         let dungeon = DungeonMockData.mockData[indexPath.row]
         cell.set(dungeon: dungeon)
         return cell

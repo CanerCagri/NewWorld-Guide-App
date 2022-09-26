@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
     
     // MARK: Functions
     func configureViewController() {
-        title = "New World Guide"
+        title = titles.guide
         view.backgroundColor = .systemBackground
         view.addSubview(scrollView)
         scrollView.backgroundColor = .systemBackground
@@ -64,13 +64,13 @@ class MainViewController: UIViewController {
     }
     
     func topRightButton() {
-        let image =  UIImage(systemName: "questionmark.bubble.fill")
+        let image =  UIImage(systemName: mainTopRightButton.imageName)
         let button = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(rightButtonTapped))
         navigationItem.rightBarButtonItem = button
     }
         
     @objc func rightButtonTapped() {
-        let url = URL(string: "https://www.newworld.com/en-us/")
+        let url = URL(string: mainTopRightButton.url)
         let safariVC = SFSafariViewController(url: url!)
         safariVC.preferredControlTintColor = .systemGreen
         present(safariVC, animated: true)
