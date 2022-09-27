@@ -27,6 +27,20 @@ class DungeonsTableViewCell: UITableViewCell {
         return label
     }()
     
+    let dungeonType: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 9, weight: .medium)
+        label.textColor = .systemBlue
+        label.text = "DungeonType"
+        label.backgroundColor = .systemGray3
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.8
+        label.lineBreakMode = .byTruncatingTail
+        return label
+    }()
+    
     let dungeonLevel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +86,7 @@ class DungeonsTableViewCell: UITableViewCell {
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
+        label.text = ""
         label.lineBreakMode = .byTruncatingTail
         return label
     }()
@@ -97,6 +112,7 @@ class DungeonsTableViewCell: UITableViewCell {
         label.textColor = .label
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
+        label.text = ""
         label.lineBreakMode = .byTruncatingTail
         return label
     }()
@@ -116,10 +132,9 @@ class DungeonsTableViewCell: UITableViewCell {
     // MARK: Functions
     func set(dungeon: DungeonModel) {
         dungeonName.text = dungeon.name
+        dungeonType.text = dungeon.type
         dungeonLevel.text = "\(dungeon.levelRequirement)"
         dungeonLocation.text = dungeon.location
-        weakness.text = ""
-        strongest.text = ""
         for i in 0..<dungeon.weakneses.count {
             weakness.text? += "\(dungeon.weakneses[i])/"
         }
@@ -139,12 +154,19 @@ class DungeonsTableViewCell: UITableViewCell {
         addSubview(weakness)
         addSubview(strongestLabel)
         addSubview(strongest)
+        addSubview(dungeonType)
         
         NSLayoutConstraint.activate([
             dungeonName.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             dungeonName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             dungeonName.heightAnchor.constraint(equalToConstant: 60),
             dungeonName.widthAnchor.constraint(equalToConstant: 120),
+            
+            dungeonType.topAnchor.constraint(equalTo: dungeonName.bottomAnchor, constant: -25),
+            dungeonType.leadingAnchor.constraint(equalTo: dungeonName.leadingAnchor),
+            dungeonType.trailingAnchor.constraint(equalTo: dungeonName.trailingAnchor),
+            dungeonType.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
+            
             
             dungeonLevel.leadingAnchor.constraint(equalTo: dungeonName.trailingAnchor, constant: padding),
             dungeonLevel.topAnchor.constraint(equalTo: dungeonName.topAnchor),

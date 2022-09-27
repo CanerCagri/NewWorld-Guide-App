@@ -42,7 +42,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
-        
         layoutUI()
         topRightButton()
         configureUI()
