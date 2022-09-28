@@ -22,7 +22,7 @@ class DungeonsTableViewCell: UITableViewCell {
         label.textColor = .label
         label.backgroundColor = .systemGray3
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
+        label.minimumScaleFactor = 0.8 
         label.lineBreakMode = .byTruncatingTail
         return label
     }()
@@ -136,25 +136,21 @@ class DungeonsTableViewCell: UITableViewCell {
         dungeonLevel.text = "\(dungeon.levelRequirement)"
         dungeonLocation.text = dungeon.location
         for i in 0..<dungeon.weakneses.count {
-            weakness.text? += "\(dungeon.weakneses[i])/"
+            let temp = "\(dungeon.weakneses[i])/"
+            weakness.text! += temp
         }
+        
         weakness.text?.removeLast()
 
         for j in 0..<dungeon.resistanses.count {
-            strongest.text? += "\(dungeon.resistanses[j])/"
+            let temp = "\(dungeon.resistanses[j])/"
+            strongest.text! += temp
         }
         strongest.text?.removeLast()
     }
     
     private func configure() {
-        addSubview(dungeonName)
-        addSubview(dungeonLevel)
-        addSubview(dungeonLocation)
-        addSubview(weaknessLabel)
-        addSubview(weakness)
-        addSubview(strongestLabel)
-        addSubview(strongest)
-        addSubview(dungeonType)
+        addSubviews(dungeonName, dungeonType, dungeonLevel, dungeonLocation, weaknessLabel, weakness, strongestLabel, strongest)
         
         NSLayoutConstraint.activate([
             dungeonName.centerYAnchor.constraint(equalTo: self.centerYAnchor),

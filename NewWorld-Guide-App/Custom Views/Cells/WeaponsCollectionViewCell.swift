@@ -69,9 +69,7 @@ class WeaponsCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
-        addSubview(weaponImageView)
-        addSubview(weaponName)
-        addSubview(weaponScales)
+        addSubviews(weaponImageView, weaponName, weaponScales)
         
         NSLayoutConstraint.activate([
             weaponImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),

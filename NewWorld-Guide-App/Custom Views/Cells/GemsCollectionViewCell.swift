@@ -123,13 +123,7 @@ class GemsCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
-        addSubview(gemImageView)
-        addSubview(gemName)
-        addSubview(gemEffectsLabel)
-        addSubview(weaponEffectsLabel)
-        addSubview(weaponEffects)
-        addSubview(armorsEffectsLabel)
-        addSubview(armorsEffects)
+        addSubviews(gemImageView, gemName, gemEffectsLabel, weaponEffectsLabel, weaponEffects, armorsEffectsLabel, armorsEffects)
         
         NSLayoutConstraint.activate([
             gemImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),

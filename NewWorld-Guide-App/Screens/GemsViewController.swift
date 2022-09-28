@@ -41,13 +41,7 @@ class GemsViewController: UIViewController {
         dataSource = UICollectionViewDiffableDataSource<Section, GemModel>(collectionView: collectionView, cellProvider: { collectionView, indexPath, gem in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID.gemsCollectionViewCell, for: indexPath) as! GemsCollectionViewCell
             cell.set(gem: gem)
-            cell.layer.cornerRadius = 15.0
-            cell.layer.borderWidth = 0.0
-            cell.layer.shadowColor = UIColor.black.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-            cell.layer.shadowRadius = 5.0
-            cell.layer.shadowOpacity = 1
-            cell.layer.masksToBounds = false
+            cell.addShadow()
             return cell
         })
     }

@@ -31,6 +31,7 @@
 		01DE74C128E1CF80002CFEFE /* PerkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C028E1CF80002CFEFE /* PerkModel.swift */; };
 		01DE74C328E1CF88002CFEFE /* GemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C228E1CF88002CFEFE /* GemModel.swift */; };
 		01DE74C828E1E17A002CFEFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C728E1E17A002CFEFE /* Constants.swift */; };
+		01DE74CA28E43C99002CFEFE /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE74C928E43C99002CFEFE /* UICollectionViewCell+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		01DE74C028E1CF80002CFEFE /* PerkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerkModel.swift; sourceTree = "<group>"; };
 		01DE74C228E1CF88002CFEFE /* GemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemModel.swift; sourceTree = "<group>"; };
 		01DE74C728E1E17A002CFEFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01DE74C928E43C99002CFEFE /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				01DE74B828DDCCFF002CFEFE /* UIView+Ext.swift */,
+				01DE74C928E43C99002CFEFE /* UICollectionViewCell+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				01DE749F28D86D24002CFEFE /* NWWeaponsViewController.swift in Sources */,
 				01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */,
 				01DE74BB28DDD44E002CFEFE /* PerksTableViewCell.swift in Sources */,
+				01DE74CA28E43C99002CFEFE /* UICollectionViewCell+Ext.swift in Sources */,
 				01DE74A728D91651002CFEFE /* UIHelper.swift in Sources */,
 				01DE74C128E1CF80002CFEFE /* PerkModel.swift in Sources */,
 				01916DA428C9E55B00EA2A1D /* DungeonModel.swift in Sources */,

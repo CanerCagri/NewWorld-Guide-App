@@ -82,10 +82,7 @@ class PerksTableViewCell: UITableViewCell {
     }
     
     private func configure() {
-        addSubview(perksImageView)
-        addSubview(perkName)
-        addSubview(descriptionLabel)
-        addSubview(tierLabel)
+        addSubviews(perksImageView, perkName, descriptionLabel, tierLabel)
         
         NSLayoutConstraint.activate([
             perksImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
