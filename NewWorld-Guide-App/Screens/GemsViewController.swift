@@ -44,7 +44,7 @@ class GemsViewController: UIViewController {
     
     func configureSearchController() {
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search for a username"
+        searchController.searchBar.placeholder = Constants.gemPlaceHolder
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }

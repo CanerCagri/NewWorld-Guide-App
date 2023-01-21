@@ -46,7 +46,7 @@ class PerksViewController: UIViewController {
     
     func configureSearchController() {
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = Constants.perkPlaceholder
+        searchController.searchBar.placeholder = Constants.perkPlaceHolder
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         definesPresentationContext = true

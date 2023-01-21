@@ -46,7 +46,7 @@ class WeaponsViewController: UIViewController {
     
     func configureSearchController() {
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search for a username"
+        searchController.searchBar.placeholder = Constants.weaponPlaceHolder
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
     }

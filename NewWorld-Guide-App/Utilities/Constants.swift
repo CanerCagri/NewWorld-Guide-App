@@ -9,7 +9,10 @@ import UIKit
 
 enum Constants {
     static let heightForDevice: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8PlusZoomed || DeviceTypes.isiPhone8Standard || DeviceTypes.isiPhone8Zoomed || DeviceTypes.isiPhone8PlusStandard ? 150 : -100
-    static let perkPlaceholder = "Search for a perkname"
+    static let perkPlaceHolder = "Search with Perk name"
+    static let gemPlaceHolder = "Search with Gem name"
+    static let dungeonPlaceHolder = "Search with Dungeon name"
+    static let weaponPlaceHolder = "Search with Weapon name"
     static let mainRightTopButtonImageName = "questionmark.bubble.fill"
     static let mainRightTopButtonUrl = "https://www.newworld.com/en-us/"
 }
