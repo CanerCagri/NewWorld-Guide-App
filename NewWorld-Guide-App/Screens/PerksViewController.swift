@@ -11,11 +11,14 @@ import UIKit
 class PerksViewController: UIViewController {
     
     // MARK: Properties
+    
     let tableView = UITableView()
     let searchController = UISearchController()
     var perks = PerkMockData.mockdata
+    var filteredPerks: [PerkModel] = []
     
     // MARK: Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -23,7 +26,8 @@ class PerksViewController: UIViewController {
         configureTableView()
     }
     
-    // MARK: Functioins
+    // MARK: Functions
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         title = titles.perks
@@ -42,7 +46,7 @@ class PerksViewController: UIViewController {
     
     func configureSearchController() {
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = perkSearchBar.placeholder
+        searchController.searchBar.placeholder = Constants.perkPlaceholder
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         definesPresentationContext = true
@@ -52,6 +56,7 @@ class PerksViewController: UIViewController {
 }
 
 // MARK: Tableview Methods
+
 extension PerksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,16 +71,20 @@ extension PerksViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: SearchBar Methods
+
 extension PerksViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else {
+            filteredPerks.removeAll()
             perks = PerkMockData.mockdata
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
             return
         }
-        perks = perks.filter { $0.name.lowercased().contains(filter.lowercased()) }
+        perks = PerkMockData.mockdata
+        filteredPerks = perks.filter { $0.name.lowercased().contains(filter.lowercased()) }
+        perks = filteredPerks
         
         DispatchQueue.main.async {
             self.tableView.reloadData()

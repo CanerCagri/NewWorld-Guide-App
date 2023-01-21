@@ -11,10 +11,12 @@ import UIKit
 class NWWeaponsViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Properties
+    
     let imageView = UIImageView()
     var imageName: String!
     
     // MARK: Lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
@@ -24,6 +26,7 @@ class NWWeaponsViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // MARK: Functions
+    
     func layoutUI() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         

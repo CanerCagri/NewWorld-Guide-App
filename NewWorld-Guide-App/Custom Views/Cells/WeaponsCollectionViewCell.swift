@@ -10,42 +10,11 @@ import UIKit
 
 class WeaponsCollectionViewCell: UICollectionViewCell {
     
-    // MARK: Properties
-    let padding: CGFloat = 8
-    
     // MARK: Views
-    let weaponImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .gray
-        imageView.layer.cornerRadius = 12
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let weaponName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 13, weight: .heavy)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let weaponScales: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
+
+    let weaponImageView = NWImageView(backgroundColor: .gray, cornerRadius: 12)
+    let weaponName = NWTitleLabel(textAlignment: .center, fontSize: 12)
+    let weaponScales = NWBodyLabel(text: "", textAlignment: .center, fontSize: 10, textColor: .systemGray, minimumScale: 0.8)
     
     // MARK: Lifecycle methods
     override init(frame: CGRect) {
@@ -61,30 +30,29 @@ class WeaponsCollectionViewCell: UICollectionViewCell {
     func set(weapon: WeaponModel) {
         weaponImageView.image = UIImage(named: weapon.image)
         weaponName.text = weapon.name
-        weaponScales.text = ""
-        for i in 0..<weapon.scale!.count {
-            weaponScales.text? += "\(weapon.scale![i])/"
-        }
-        weaponScales.text?.removeLast()
+        
+        guard let weaponScale = weapon.scale else { return }
+        let weaponString = weaponScale.map({ "\($0)/" }).joined()
+         weaponScales.text = String(weaponString[..<weaponString.index(before: weaponString.endIndex)])
     }
-    
+
     private func configure() {
         addSubviews(weaponImageView, weaponName, weaponScales)
         
         NSLayoutConstraint.activate([
-            weaponImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
-            weaponImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            weaponImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            weaponImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            weaponImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            weaponImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             weaponImageView.heightAnchor.constraint(equalTo: weaponImageView.widthAnchor),
             
             weaponName.topAnchor.constraint(equalTo: weaponImageView.bottomAnchor, constant: 12),
-            weaponName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            weaponName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            weaponName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            weaponName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             weaponName.heightAnchor.constraint(equalToConstant: 20),
             
             weaponScales.topAnchor.constraint(equalTo: weaponName.bottomAnchor, constant: -4),
-            weaponScales.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            weaponScales.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            weaponScales.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            weaponScales.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             weaponScales.heightAnchor.constraint(equalToConstant: 20),
         ])
     }

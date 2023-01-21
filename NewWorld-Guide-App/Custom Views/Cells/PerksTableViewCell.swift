@@ -10,61 +10,19 @@ import UIKit
 
 class PerksTableViewCell: UITableViewCell {
 
-    // MARK: Properties
-    let padding: CGFloat = 10
-    
     // MARK: Views
-    let perksImageView: UIImageView = {
-        var imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 12
-        imageView.backgroundColor = .darkGray
-        imageView.clipsToBounds = true
-        return imageView
-    }()
     
-    let perkName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 11, weight: .heavy)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.backgroundColor = .systemGray3
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 9, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.lineBreakMode = .byTruncatingTail
-        label.numberOfLines = 5
-        return label
-    }()
-    
-    let tierLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
+    let perksImageView = NWImageView(backgroundColor: .darkGray, cornerRadius: 12)
+    let perkName = NWTitleLabel(textAlignment: .center, fontSize: 11, backGroundColor: .systemGray3)
+    let descriptionLabel = NWBodyLabel(text: "", textAlignment: .center, fontSize: 9, textColor: .label, minimumScale: 0.8)
+    let tierLabel = NWBodyLabel(text: "", textAlignment: .center, fontSize: 12, textColor: .label, minimumScale: 0.8)
     
     // MARK: Lifecycle Methods
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
+        perkName.numberOfLines = 2
+        descriptionLabel.numberOfLines = 5
         configure()
         applyShadow(cornerRadius: 8)
     }
@@ -85,24 +43,24 @@ class PerksTableViewCell: UITableViewCell {
         addSubviews(perksImageView, perkName, descriptionLabel, tierLabel)
         
         NSLayoutConstraint.activate([
-            perksImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-            perksImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            perksImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
+            perksImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            perksImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            perksImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             perksImageView.widthAnchor.constraint(equalToConstant: 50),
             
-            perkName.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
-            perkName.leadingAnchor.constraint(equalTo: perksImageView.trailingAnchor, constant: padding),
+            perkName.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            perkName.leadingAnchor.constraint(equalTo: perksImageView.trailingAnchor, constant: 10),
             perkName.widthAnchor.constraint(equalToConstant: 100),
             perkName.heightAnchor.constraint(equalToConstant: 50),
             
             descriptionLabel.topAnchor.constraint(equalTo: perksImageView.topAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: perkName.trailingAnchor, constant: padding),
-            descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -padding),
+            descriptionLabel.leadingAnchor.constraint(equalTo: perkName.trailingAnchor, constant: 10),
+            descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             descriptionLabel.widthAnchor.constraint(equalToConstant: 130),
             
             tierLabel.topAnchor.constraint(equalTo: perkName.topAnchor),
-            tierLabel.leadingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor, constant: padding),
-            tierLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
+            tierLabel.leadingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor, constant: 10),
+            tierLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             tierLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }

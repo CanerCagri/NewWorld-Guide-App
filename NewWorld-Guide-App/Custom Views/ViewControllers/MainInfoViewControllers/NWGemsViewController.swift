@@ -11,10 +11,12 @@ import UIKit
 class NWGemsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
+    
     let imageView = UIImageView()
     var imageName: String!
     
     // MARK: Lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
@@ -25,6 +27,7 @@ class NWGemsViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Functions
     func layoutUI() {
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([

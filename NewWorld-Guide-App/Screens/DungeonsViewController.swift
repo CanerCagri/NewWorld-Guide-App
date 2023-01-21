@@ -10,10 +10,12 @@ import UIKit
 
 class DungeonsViewController: UIViewController {
     
-    // MARK: Properties
+    // MARK: Views
+    
     let tableView = UITableView()
 
     // MARK: Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -40,6 +42,7 @@ class DungeonsViewController: UIViewController {
 }
 
 // MARK: Tableview Methods
+
 extension DungeonsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

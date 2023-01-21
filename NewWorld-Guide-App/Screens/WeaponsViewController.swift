@@ -11,10 +11,12 @@ import UIKit
 class WeaponsViewController: UIViewController {
     
     // MARK: Properties
+    
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource <Section, WeaponModel>!
     
     // MARK: Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -24,6 +26,7 @@ class WeaponsViewController: UIViewController {
     }
     
     // MARK: Functions
+    
     func configureViewController() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = titles.weapons

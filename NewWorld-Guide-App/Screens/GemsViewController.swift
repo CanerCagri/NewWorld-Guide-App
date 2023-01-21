@@ -10,11 +10,13 @@ import UIKit
 
 class GemsViewController: UIViewController {
     
-    // MARK: Properties
+    // MARK: Propertie
+    
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource <Section, GemModel>!
     
     // MARK: Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()

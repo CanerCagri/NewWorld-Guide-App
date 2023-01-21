@@ -9,102 +9,18 @@ import UIKit
 
 class GemsCollectionViewCell: UICollectionViewCell {
     
-    // MARK: Properties
-    let padding: CGFloat = -10
-    
     // MARK: Views
-    let gemImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .gray
-        imageView.layer.cornerRadius = 12
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
-    let gemName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let gemEffectsLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.text = "Effects:"
-        label.font = UIFont.systemFont(ofSize: 10, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.textColor = .red
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let weaponEffectsLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.text = "Weapons:"
-        label.font = UIFont.systemFont(ofSize: 8, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.textColor = .red
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let weaponEffects: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 8, weight: .medium)
-        label.textColor = .label
-        label.text = "WeaponEffects"
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.numberOfLines = 3
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let armorsEffectsLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.text = "Armors:"
-        label.font = UIFont.systemFont(ofSize: 8, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.textColor = .red
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
-    
-    let armorsEffects: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.text = "ArmorEffects"
-        label.font = UIFont.systemFont(ofSize: 8, weight: .medium)
-        label.textColor = .label
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.8
-        label.numberOfLines = 3
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
+
+    let gemImageView = NWImageView(backgroundColor: .systemGray, cornerRadius: 12)
+    let gemName = NWTitleLabel(textAlignment: .center, fontSize: 10)
+    let gemEffectsLabel = NWBodyLabel(text: "Effects", textAlignment: .center, fontSize: 10, textColor: .systemRed, minimumScale: 0.8)
+    let weaponEffectsLabel = NWBodyLabel(text: "Weapons", textAlignment: .left, fontSize: 8, textColor: .systemRed, minimumScale: 0.8)
+    let weaponEffects = NWBodyLabel(text: "WeaponEffects", textAlignment: .left, fontSize: 8, textColor: .label, minimumScale: 0.8)
+    let armorsEffectsLabel = NWBodyLabel(text: "Armors", textAlignment: .left, fontSize: 8, textColor: .systemRed, minimumScale: 0.8)
+    let armorsEffects = NWBodyLabel(text: "ArmorEffects", textAlignment: .left, fontSize: 8, textColor: .label, minimumScale: 0.8)
     
     // MARK: Lifecycle methods
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -115,6 +31,7 @@ class GemsCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: Functions
+    
     func set(gem: GemModel) {
         gemImageView.image = UIImage(named: gem.image)
         gemName.text = gem.name
@@ -123,22 +40,25 @@ class GemsCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
+        weaponEffects.numberOfLines = 4
+        armorsEffects.numberOfLines = 4
+        
         addSubviews(gemImageView, gemName, gemEffectsLabel, weaponEffectsLabel, weaponEffects, armorsEffectsLabel, armorsEffects)
         
         NSLayoutConstraint.activate([
-            gemImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
-            gemImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            gemImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            gemImageView.topAnchor.constraint(equalTo: topAnchor, constant: -10),
+            gemImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -10),
+            gemImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             gemImageView.heightAnchor.constraint(equalTo: gemImageView.widthAnchor),
             
             gemName.topAnchor.constraint(equalTo: gemImageView.bottomAnchor, constant: 12),
-            gemName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            gemName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            gemName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -10),
+            gemName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             gemName.heightAnchor.constraint(equalToConstant: 20),
             
             gemEffectsLabel.topAnchor.constraint(equalTo: gemName.bottomAnchor, constant: -4),
-            gemEffectsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-            gemEffectsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            gemEffectsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -10),
+            gemEffectsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             gemEffectsLabel.heightAnchor.constraint(equalToConstant: 20),
             
             weaponEffectsLabel.topAnchor.constraint(equalTo: gemEffectsLabel.bottomAnchor, constant: 5),
@@ -149,7 +69,7 @@ class GemsCollectionViewCell: UICollectionViewCell {
             weaponEffects.topAnchor.constraint(equalTo: weaponEffectsLabel.bottomAnchor, constant: -5),
             weaponEffects.leadingAnchor.constraint(equalTo: weaponEffectsLabel.leadingAnchor),
             weaponEffects.trailingAnchor.constraint(equalTo: gemImageView.trailingAnchor),
-            weaponEffects.heightAnchor.constraint(equalToConstant: 30),
+            weaponEffects.heightAnchor.constraint(equalToConstant: 40),
             
             armorsEffectsLabel.topAnchor.constraint(equalTo: weaponEffects.bottomAnchor, constant: 5),
             armorsEffectsLabel.leadingAnchor.constraint(equalTo: weaponEffects.leadingAnchor),
@@ -159,7 +79,7 @@ class GemsCollectionViewCell: UICollectionViewCell {
             armorsEffects.topAnchor.constraint(equalTo: armorsEffectsLabel.bottomAnchor, constant: -5),
             armorsEffects.leadingAnchor.constraint(equalTo: armorsEffectsLabel.leadingAnchor),
             armorsEffects.trailingAnchor.constraint(equalTo: gemImageView.trailingAnchor),
-            armorsEffects.heightAnchor.constraint(equalToConstant: 20)
+            armorsEffects.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
 }

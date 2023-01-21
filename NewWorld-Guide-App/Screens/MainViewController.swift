@@ -12,13 +12,14 @@ import SafariServices
 class MainViewController: UIViewController {
     
     // MARK: Views
+    
     let dungeons = UIView()
     let characters = UIView()
     let perks = UIView()
     let gems = UIView()
     var containers: [UIView] = []
     
-    lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
+    lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + Constants.heightForDevice)
     
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView(frame: .zero)
@@ -39,6 +40,7 @@ class MainViewController: UIViewController {
     }()
     
     // MARK: Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
@@ -47,12 +49,9 @@ class MainViewController: UIViewController {
         configureUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
+ 
     // MARK: Functions
+    
     func configureViewController() {
         title = titles.guide
         view.backgroundColor = .systemBackground
@@ -63,13 +62,13 @@ class MainViewController: UIViewController {
     }
     
     func topRightButton() {
-        let image =  UIImage(systemName: mainTopRightButton.imageName)
+        let image =  UIImage(systemName: Constants.mainRightTopButtonImageName)
         let button = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(rightButtonTapped))
         navigationItem.rightBarButtonItem = button
     }
         
     @objc func rightButtonTapped() {
-        let url = URL(string: mainTopRightButton.url)
+        let url = URL(string: Constants.mainRightTopButtonUrl)
         let safariVC = SFSafariViewController(url: url!)
         safariVC.preferredControlTintColor = .systemGreen
         present(safariVC, animated: true)
