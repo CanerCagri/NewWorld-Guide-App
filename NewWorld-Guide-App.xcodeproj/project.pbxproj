@@ -10,6 +10,7 @@
 		011E8C11297C3A4800F163D4 /* NWBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E8C10297C3A4800F163D4 /* NWBodyLabel.swift */; };
 		011E8C14297C47AD00F163D4 /* NWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E8C13297C47AD00F163D4 /* NWImageView.swift */; };
 		011E8C16297C493600F163D4 /* NWTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E8C15297C493600F163D4 /* NWTitleLabel.swift */; };
+		011E8C1A298089E400F163D4 /* WeaponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011E8C19298089E400F163D4 /* WeaponDetailViewController.swift */; };
 		01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8028C9CF3000EA2A1D /* AppDelegate.swift */; };
 		01916D8328C9CF3000EA2A1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8228C9CF3000EA2A1D /* SceneDelegate.swift */; };
 		01916D8528C9CF3000EA2A1D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01916D8428C9CF3000EA2A1D /* MainViewController.swift */; };
@@ -41,6 +42,7 @@
 		011E8C10297C3A4800F163D4 /* NWBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWBodyLabel.swift; sourceTree = "<group>"; };
 		011E8C13297C47AD00F163D4 /* NWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWImageView.swift; sourceTree = "<group>"; };
 		011E8C15297C493600F163D4 /* NWTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWTitleLabel.swift; sourceTree = "<group>"; };
+		011E8C19298089E400F163D4 /* WeaponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponDetailViewController.swift; sourceTree = "<group>"; };
 		01916D7D28C9CF3000EA2A1D /* NewWorld-Guide-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewWorld-Guide-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01916D8028C9CF3000EA2A1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01916D8228C9CF3000EA2A1D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,26 @@
 				011E8C13297C47AD00F163D4 /* NWImageView.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		011E8C17298089B500F163D4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				01916D8428C9CF3000EA2A1D /* MainViewController.swift */,
+				01DE74A328D91410002CFEFE /* WeaponsViewController.swift */,
+				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
+				01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */,
+				01DE74AE28D9D534002CFEFE /* GemsViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		011E8C18298089C500F163D4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				011E8C19298089E400F163D4 /* WeaponDetailViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		01916D7428C9CF3000EA2A1D = {
@@ -183,11 +205,8 @@
 		01DE74A228D91277002CFEFE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				01916D8428C9CF3000EA2A1D /* MainViewController.swift */,
-				01DE74A328D91410002CFEFE /* WeaponsViewController.swift */,
-				01916DA028C9E31E00EA2A1D /* DungeonsViewController.swift */,
-				01DE74AC28D9D52C002CFEFE /* PerksViewController.swift */,
-				01DE74AE28D9D534002CFEFE /* GemsViewController.swift */,
+				011E8C17298089B500F163D4 /* Core */,
+				011E8C18298089C500F163D4 /* General */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -302,6 +321,7 @@
 				01DE749F28D86D24002CFEFE /* NWWeaponsViewController.swift in Sources */,
 				011E8C11297C3A4800F163D4 /* NWBodyLabel.swift in Sources */,
 				01916D8128C9CF3000EA2A1D /* AppDelegate.swift in Sources */,
+				011E8C1A298089E400F163D4 /* WeaponDetailViewController.swift in Sources */,
 				01DE74BB28DDD44E002CFEFE /* PerksTableViewCell.swift in Sources */,
 				01DE74CA28E43C99002CFEFE /* UICollectionViewCell+Ext.swift in Sources */,
 				01DE74A728D91651002CFEFE /* UIHelper.swift in Sources */,
