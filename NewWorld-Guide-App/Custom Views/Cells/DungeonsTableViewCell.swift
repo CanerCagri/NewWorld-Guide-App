@@ -40,9 +40,12 @@ class DungeonsTableViewCell: UITableViewCell {
     
     func set(dungeon: DungeonModel) {
         dungeonName.text = dungeon.name
-        dungeonType.text = dungeon.type
+//        dungeonType.text = dungeon.type
         dungeonLevel.text = "\(dungeon.levelRequirement)"
         dungeonLocation.text = dungeon.location
+        
+        let typeString = dungeon.type.map({ "\($0)/" }).joined()
+        dungeonType.text = String(typeString[..<typeString.index(before: typeString.endIndex)])
 
         let weaknessString = dungeon.weakneses.map({ "\($0)/" }).joined()
         weakness.text = String(weaknessString[..<weaknessString.index(before: weaknessString.endIndex)])

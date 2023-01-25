@@ -54,7 +54,7 @@ class WeaponsViewController: UIViewController {
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(view: view))
         view.addSubview(collectionView)
-        
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(WeaponsCollectionViewCell.self, forCellWithReuseIdentifier: reuseID.weaponCollectionViewCell)
     }
@@ -73,6 +73,17 @@ class WeaponsViewController: UIViewController {
         snapShot.appendItems(weapons)
         
         dataSource.apply(snapShot, animatingDifferences: true)
+    }
+}
+
+extension WeaponsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filteredWeapons : weapons
+        let weapon = activeArray[indexPath.item]
+        
+        let detailVc = WeaponDetailViewController(weapon: weapon)
+        let navigationController = UINavigationController(rootViewController: detailVc)
+        present(navigationController, animated: true)
     }
 }
 

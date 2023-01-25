@@ -17,8 +17,6 @@ struct WeaponModel: Codable, Hashable {
     var skillTreeImage: String
     var skillTreeFirst: String
     var skillTreeSecond: String
-
-    
 }
 
 struct WeaponMockData {

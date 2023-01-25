@@ -18,6 +18,15 @@ class NWBodyLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
+    init(textAlignment: NSTextAlignment) {
+        super.init(frame: .zero)
+        self.textAlignment = textAlignment
+        configure()
+        textColor = .secondaryLabel
+        font = UIFont.preferredFont(forTextStyle: .body)
+        minimumScaleFactor = 0.75
+    }
+    
     init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
         super.init(frame: .zero)
         configure()
@@ -39,6 +48,7 @@ class NWBodyLabel: UILabel {
     
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
+        adjustsFontForContentSizeCategory = true
         adjustsFontSizeToFitWidth = true
         lineBreakMode = .byTruncatingTail
     }
